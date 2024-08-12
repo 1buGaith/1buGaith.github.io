@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar">
+<link rel="Icon" type="image/x-Icon" href="https://raw.githubusercontent.com/1buGaith/1buGaith.github.io/main/ghost.ico">
 <head>
     <meta charset="UTF-8">
     <title>dominant</title>
@@ -49,14 +50,14 @@
             font-size: 1em;
             border: none;
             border-radius: 25px;
-            background-color: #ff6f91; /* اللون الأساسي الأحمر */
+            background-color: #FF0000; /* اللون الأساسي الأحمر */
             color: #fff;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease; /* إضافة تأثير لتغيير الحجم */
         }
 
         .welcome-box button:hover {
-            background-color: #ff4e7a; /* لون أغمق عند المرور بالماوس */
+            background-color: #FF0000; /* لون أغمق عند المرور بالماوس */
             transform: scale(1.1); /* زيادة الحجم عند مرور الماوس */
         }
 
@@ -272,7 +273,7 @@
 <body>
     <div class="welcome-box">
         <h1>مرحباً بك!</h1>
-        <p>نحن سعداء بزيارتك لموقعنا. نتمنى لك تجربة ممتعة!</p>
+        <p>أستمتعو ولا تقلدو .. </p>
         <button onclick="openSidebar()">ابدأ الآن</button>
     </div>
 
@@ -285,18 +286,17 @@
         <ul>
             <li onclick="openVictims()">
                 <img src="https://cdn.discordapp.com/attachments/1190489490687541258/1272284266121793616/s27tWto.png?ex=66ba6a8e&is=66b9190e&hm=1be350653c1c4b52b225defbe02a89a7e207c4b648042343c207c3999e6a7cce&" alt="Victims Icon">
-                Victims
+                البيفات
             </li>
             <li onclick="openContact()">
-                <i class="fas fa-envelope"></i> تواصل معنا
+                <i class="fas fa-envelope"></i> حساباتي
             </li>
         </ul>
     </div>
 
     <!-- الحاوية الخاصة بعرض مقاطع الفيديو -->
     <div class="content" id="content">
-        <button class="back-button" onclick="closeContent()">العودة</button>
-        <h1>Victims</h1>
+        <h1>Victim video</h1>
         <div class="search-box">
             <input type="text" id="searchInput" placeholder="بحث عن مقطع...">
             <button onclick="searchVideos()">بحث</button>
@@ -318,7 +318,7 @@
     </div>
 
     <div class="footer">
-        حقوق الطبع والنشر © 2024 by dominant
+        MD Group - 187 Team - 187 Group
     </div>
 
     <script>
@@ -386,10 +386,11 @@
         }	
 
         function loadVideos() {
-            const videos = [
-                { src: 'https://ia801509.us.archive.org/18/items/20240811_20240811_1841/%D8%B4%D8%A7%D8%AF%D9%88%20%D8%A7%D9%84%D9%85%D9%84%D8%AD%D8%AF.mp4', title: 'شادو الملحد' }
-                // أضف هنا مقاطع الفيديو الأخرى إذا كان هناك المزيد
-            ];
+    const videos = [
+        { src: 'https://ia800100.us.archive.org/8/items/the-neath-explicit/%EF%BC%82The%20Neath%EF%BC%82%20%28Explicit%29%20%EF%BD%9C%20%D8%B0%D8%A7%20%D9%86%D9%8A%D8%AB.mp4', title: 'ذا نيث (Explicit)' },
+		{ src: 'https://d.top4top.io/m_3145a8z4h1.mp4', title: '＂Direct Alarm "(Explicit) | إنذار مباشر ' }
+        // يمكنك إضافة المزيد من مقاطع الفيديو هنا إذا كنت تريد
+    ];
             const container = document.getElementById('videosContainer');
             container.innerHTML = '';
             videos.forEach(video => {
