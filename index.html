@@ -1,416 +1,116 @@
 <!DOCTYPE html>
-<html lang="ar">
-<link rel="Icon" type="image/x-Icon" href="https://raw.githubusercontent.com/1buGaith/1buGaith.github.io/main/ghost.ico">
-<meta property="og:description" content="MD family">
-<meta property="og:image" content="https://raw.githubusercontent.com/1buGaith/1buGaith.github.io/main/ghost.png">
+<html lang="en" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>dominant</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aka Mhmd</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/1buGaith/1buGaith.github.io/refs/heads/main/ghost.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;600&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
-
         body {
             margin: 0;
             padding: 0;
-            background: url('https://cdn.discordapp.com/attachments/1208722520556179476/1208744552253497434/03BCD984-52F0-4907-B1E0-3747F45130F6.jpg?ex=66b9f916&is=66b8a796&hm=f392e55d4012f8754e623888972632ba694293f2f88fe02039d7a7fa7569ab75&') no-repeat center center fixed;
-            background-size: cover;
             font-family: 'Cairo', sans-serif;
+            background: url('https://raw.githubusercontent.com/1buGaith/1buGaith.github.io/main/2.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6); /* شفافية للخلفية */
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            border: 3px solid #fff;
+            background: url('https://raw.githubusercontent.com/1buGaith/1buGaith.github.io/main/1.jpg') no-repeat center center;
+            background-size: cover;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin: 0.5rem 0;
+        }
+
+        p {
+            font-size: 1rem;
+            margin: 0.5rem 0;
+            color: #bbb;
+        }
+
+        .now-playing {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+
+        .now-playing h3 {
+            margin: 0;
+            font-size: 1rem;
+            color: #fff;
+        }
+
+        .now-playing p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        .social-links {
+            margin-top: 1rem;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
-        }
-
-        .welcome-box {
-            background: rgba(255, 255, 255, 0.6);
-            border-radius: 15px;
-            padding: 40px 60px;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            text-align: center;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            backdrop-filter: blur(8px);
-        }
-
-        .welcome-box h1 {
-            margin: 0;
-            font-size: 3em;
-            color: #333;
-        }
-
-        .welcome-box p {
-            margin-top: 20px;
-            font-size: 1.2em;
-            color: #555;
-        }
-
-        .welcome-box button {
-            margin-top: 30px;
-            padding: 10px 20px;
-            font-size: 1em;
-            border: none;
-            border-radius: 25px;
-            background-color: #FF0000; /* اللون الأساسي الأحمر */
-            color: #fff;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease; /* إضافة تأثير لتغيير الحجم */
-        }
-
-        .welcome-box button:hover {
-            background-color: #FF0000; /* لون أغمق عند المرور بالماوس */
-            transform: scale(1.1); /* زيادة الحجم عند مرور الماوس */
-        }
-
-        .sidebar {
-            position: fixed;
-            right: 0;
-            top: 0;
-            width: 250px;
-            height: 100%;
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            transform: translateX(100%);
-            transition: transform 0.3s ease;
-        }
-
-        .sidebar.show {
-            transform: translateX(0);
-        }
-
-        .sidebar:hover {
-            transform: translateX(0);
-        }
-
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .sidebar ul li {
-            margin: 15px 0;
-            padding: 10px;
-            background-color: #444;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            cursor: pointer;
-            display: flex;
             align-items: center;
+            gap: 10px;
         }
 
-        .sidebar ul li img {
-            width: 24px;
-            height: 24px;
-            margin-right: 10px;
-        }
-
-        .sidebar ul li:hover {
-            background-color: #555;
-        }
-
-        .sidebar .logo {
-            display: flex;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-
-        .sidebar .logo img {
-            width: 24px;
-            height: 24px;
-            margin-right: 10px;
-        }
-
-        .sidebar .logo h2 {
-            margin: 0;
-            font-size: 1.5em;
-        }
-
-        .content {
-            display: none;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 70%;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            backdrop-filter: blur(8px);
-        }
-
-        .content.show {
-            display: block;
-        }
-
-        .content h1 {
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .content .video-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .video-item {
-            width: 100%;
-            max-width: 320px; /* Resize video item */
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .video-item video {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        .video-item p {
-            margin-top: 10px;
-            font-size: 1.1em;
-        }
-
-        .search-box {
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .search-box input[type="text"] {
-            padding: 10px;
-            font-size: 1em;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            width: 80%;
-            max-width: 300px;
-        }
-
-        .search-box button {
-            padding: 10px 20px;
-            font-size: 1em;
-            border: none;
-            border-radius: 5px;
-            background-color: #ff6f91;
+        .social-links a {
             color: #fff;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .search-box button:hover {
-            background-color: #ff4e7a;
-        }
-
-        .back-button, .contact-back-button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 1em;
-            border: none;
-            border-radius: 25px;
-            background-color: #ff6f91;
-            color: #fff;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            display: block;
-            text-align: center;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .back-button:hover, .contact-back-button:hover {
-            background-color: #ff4e7a;
-        }
-
-        .footer {
-            margin-top: auto;
-            text-align: center;
-            padding: 10px 0;
-            background-color: #333;
-            color: #fff;
-            font-size: 0.9em;
-            width: 100%;
-            position: relative;
-            bottom: 0;
-        }
-
-        .contact-box {
-            background: rgba(255, 255, 255, 0.6);
-            border-radius: 15px;
-            padding: 40px 60px;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            text-align: center;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            backdrop-filter: blur(8px);
-            width: 50%;
-            display: none; /* Make sure it is hidden initially */
-        }
-
-        .contact-box a {
-            display: block;
-            margin: 15px 0;
-            font-size: 1.5em;
-            color: #333;
+            font-size: 1.2rem;
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
         }
 
-        .contact-box a:hover {
-            color: #ff6f91;
+        .social-links a:hover {
+            color: #6c63ff;
         }
 
-        .contact-box i {
-            margin-right: 10px;
-            color: #ff6f91;
+        .social-links .email {
+            font-size: 1rem;
+            color: #bbb;
         }
     </style>
 </head>
 <body>
-    <div class="welcome-box">
-        <h1>مرحباً بك!</h1>
-        <p>أستمتعو ولا تقلدو .. </p>
-        <button onclick="openSidebar()">ابدأ الآن</button>
-    </div>
+    <div class="container">
+        <div class="profile-pic"></div>
+        <h1># M O H A M M E D.</h1>
+        <p>Not everyone deserves a place in your story</p>
 
-    <!-- القائمة الجانبية -->
-    <div class="sidebar" id="sidebar">
-        <div class="logo">
-            <img src="https://cdn.discordapp.com/attachments/1190489490687541258/1272284266121793616/s27tWto.png?ex=66ba6a8e&is=66b9190e&hm=1be350653c1c4b52b225defbe02a89a7e207c4b648042343c207c3999e6a7cce&" alt="Logo">
-            <h2>dominant</h2>
+        <div class="now-playing">
+            <h3>I'm not like them, I'm like them</h3>
+            <p>d0 #</p>
         </div>
-        <ul>
-            <li onclick="openVictims()">
-                <img src="https://cdn.discordapp.com/attachments/1190489490687541258/1272284266121793616/s27tWto.png?ex=66ba6a8e&is=66b9190e&hm=1be350653c1c4b52b225defbe02a89a7e207c4b648042343c207c3999e6a7cce&" alt="Victims Icon">
-                البيفات
-            </li>
-            <li onclick="openContact()">
-                <i class="fas fa-envelope"></i> حساباتي
-            </li>
-        </ul>
-    </div>
 
-    <!-- الحاوية الخاصة بعرض مقاطع الفيديو -->
-    <div class="content" id="content">
-        <h1>Victim video</h1>
-        <div class="search-box">
-            <input type="text" id="searchInput" placeholder="بحث عن مقطع...">
-            <button onclick="searchVideos()">بحث</button>
+        <div class="social-links">
+            <a href="https://www.youtube.com/@d0minant" target="_blank" title="YouTube">YouTube</a>
+            <a href="https://www.instagram.com/2lryy" target="_blank" title="Instagram">Instagram</a>
+            <div class="email">Email: w9u@hotmail.com</div>
         </div>
-        <div id="videosContainer" class="video-container">
-            <!-- مقاطع الفيديو ستضاف هنا عبر JavaScript -->
-        </div>
-        <button class="back-button" onclick="closeContent()">العودة</button>
     </div>
-
-    <!-- الحاوية الخاصة بعرض معلومات التواصل -->
-    <div class="contact-box" id="contactBox">
-        <h1>تواصل معنا</h1>
-        <a href="https://www.youtube.com/@d0minant" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-        <a href="https://www.instagram.com/2lryy" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-        <a href="https://x.com/OldDnm" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
-        <a href="https://discord.com/users/402159000474484739" target="_blank"><i class="fab fa-discord"></i> Discord</a>
-        <button class="contact-back-button" onclick="closeContact()">العودة</button>
-    </div>
-
-    <div class="footer">
-        MD Group - 187 Team - 187 Group
-    </div>
-
-    <script>
-        function openSidebar() {
-            document.getElementById('sidebar').classList.add('show');
-            document.querySelector('.welcome-box').style.display = 'none';
-        }
-
-        function openVictims() {
-            document.getElementById('content').classList.add('show');
-            document.querySelector('.welcome-box').style.display = 'none';
-            document.getElementById('contactBox').style.display = 'none';
-            updateVideoCount();
-        }
-
-        function closeContent() {
-            document.getElementById('content').classList.remove('show');
-            document.querySelector('.welcome-box').style.display = 'block';
-        }
-
-        function openContact() {
-            document.getElementById('contactBox').style.display = 'block';
-            document.querySelector('.welcome-box').style.display = 'none';
-            document.getElementById('sidebar').classList.remove('show');
-            document.getElementById('content').classList.remove('show');
-        }
-
-        function closeContact() {
-            document.getElementById('contactBox').style.display = 'none';
-            document.querySelector('.welcome-box').style.display = 'block';
-        }
-
-        function searchVideos() {
-            const input = document.getElementById('searchInput').value.toLowerCase();
-            const videos = document.querySelectorAll('#videosContainer .video-item');
-            videos.forEach(video => {
-                const title = video.querySelector('p').textContent.toLowerCase();
-                if (title.includes(input)) {
-                    video.style.display = 'block';
-                } else {
-                    video.style.display = 'none';
-                }
-            });
-        }
-
-        const sidebar = document.getElementById('sidebar');
-        sidebar.addEventListener('mouseover', () => {
-            sidebar.classList.add('show');
-        });
-
-        sidebar.addEventListener('mouseout', () => {
-            sidebar.classList.remove('show');
-        });
-
-        window.onload = function() {
-            document.querySelector('.welcome-box').style.display = 'block';
-            document.getElementById('content').classList.remove('show');
-            document.getElementById('contactBox').style.display = 'none';
-            updateVideoCount();
-        }
-
-        function updateVideoCount() {
-            const videoCount = document.querySelectorAll('#videosContainer .video-item').length;
-            document.getElementById('videoCount').textContent = videoCount;
-        }	
-
-        function loadVideos() {
-    const videos = [
-        { src: 'https://ia800100.us.archive.org/8/items/the-neath-explicit/%EF%BC%82The%20Neath%EF%BC%82%20%28Explicit%29%20%EF%BD%9C%20%D8%B0%D8%A7%20%D9%86%D9%8A%D8%AB.mp4', title: 'ذا نيث (Explicit)' },
-		{ src: 'https://d.top4top.io/m_3145a8z4h1.mp4', title: '＂Direct Alarm "(Explicit) | إنذار مباشر ' },
-	    { src: 'https://ia601402.us.archive.org/24/items/remontada-./Remontada%20-%20%D8%B1%D9%8A%D9%85%D9%88%D9%86%D8%AA%D8%A7%D8%AF%D8%A7..mp4', title: 'Remontada - ريمونتادا.' }
-        // يمكنك إضافة المزيد من مقاطع الفيديو هنا إذا كنت تريد
-    ];
-            const container = document.getElementById('videosContainer');
-            container.innerHTML = '';
-            videos.forEach(video => {
-                const videoItem = document.createElement('div');
-                videoItem.className = 'video-item';
-                videoItem.innerHTML = `
-                    <video controls>
-                        <source src="${video.src}" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <p>${video.title}</p>
-                `;
-                container.appendChild(videoItem);
-            });
-        }
-
-        loadVideos();
-    </script>
 </body>
 </html>
